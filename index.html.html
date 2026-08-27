@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akram Hamou | Communications & Data Storytelling for International Development</title>
+    <meta name="description" content="Portfolio of Akram Hamou: International Relations graduate and communications specialist with UNCTAD experience. Specializing in data storytelling, capacity building, and policy research for international development.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        offwhite: '#FDFCF8',
+                        navy: '#0F172A',
+                        teal: '#0D9488',
+                        sand: '#D4A373',
+                        lightgray: '#F1F5F9'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'neo': '4px 4px 0px 0px #0F172A',
+                        'neo-sm': '2px 2px 0px 0px #0F172A',
+                        'neo-hover': '6px 6px 0px 0px #0D9488',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .stack-section {
+            position: relative;
+            background-color: #FDFCF8;
+            border-top: 2px solid #0F172A;
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.8s ease;
+            will-change: opacity, transform;
+        }
+        .stack-section:first-child { opacity: 1; transform: translateY(0); }
+        .stack-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+            box-shadow: 0 -15px 40px -15px rgba(15, 23, 42, 0.15);
+        }
+        .bg-grid {
+            background-image: radial-gradient(#0F172A 1px, transparent 1px);
+            background-size: 24px 24px;
+            opacity: 0.03;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FDFCF8; }
+        ::-webkit-scrollbar-thumb { background: #0F172A; border-radius: 4px; }
+        .filter-btn.active {
+            background-color: #0F172A;
+            color: #FDFCF8;
+            box-shadow: 2px 2px 0px 0px #0D9488;
+        }
+        .modal-backdrop {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-content {
+            transform: scale(0.95) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .modal-backdrop.active .modal-content {
+            transform: scale(1) translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-offwhite text-navy font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-offwhite/90 backdrop-blur-md border-b-2 border-navy">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="font-display font-bold text-xl tracking-tight">Akram Hamou<span class="text-teal">.</span></a>
+            <div class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="#about" class="hover:text-teal transition-colors">About</a>
+                <a href="#work" class="hover:text-teal transition-colors">Selected Work</a>
+                <a href="#experience" class="hover:text-teal transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-teal transition-colors">Skills</a>
+                <a href="#contact" class="hover:text-teal transition-colors">Contact</a>
+            </div>
+            <a href="[LINK_TO_CV_PDF]" target="_blank" class="hidden md:block bg-navy text-offwhite px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">
+                Download CV
+            </a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: HOME -->
+    <section id="home" class="stack-section pt-32 pb-16 md:pt-40 md:pb-24">
+        <div class="bg-grid absolute inset-0 pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 space-y-6">
+                    <div class="inline-block bg-sand/20 border-2 border-navy px-3 py-1 text-sm font-medium shadow-neo-sm">
+                        Open to Communications & Policy Roles
+                    </div>
+                    <h1 class="font-display text-5xl md:text-6xl font-bold leading-[1.1]">
+                        Communications, research, and <span class="text-teal">data storytelling</span> for international development.
+                    </h1>
+                    <p class="text-lg md:text-xl text-navy/80 max-w-xl leading-relaxed">
+                        I turn complex policy and trade data into accessible learning content, clear communications, and visual stories. 
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#work" class="bg-teal text-white px-6 py-3 font-medium border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">
+                            View Selected Work
+                        </a>
+                        <a href="[LINK_TO_CV_PDF]" target="_blank" class="bg-offwhite text-navy px-6 py-3 font-medium border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-5">
+                    <div class="aspect-[4/5] bg-lightgray border-2 border-navy shadow-neo flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-grid"></div>
+                        <img src="Photos/Photo_Akram.jpeg" alt="Akram Hamou Professional Photo" class="w-full h-full object-cover relative z-10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Credibility Bento Strip -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white border-2 border-navy p-4 shadow-neo-sm">
+                    <p class="text-xs font-bold text-teal uppercase tracking-wider mb-1">Experience</p>
+                    <p class="font-display font-bold">UN Trade & Development (UNCTAD)</p>
+                </div>
+                <div class="bg-white border-2 border-navy p-4 shadow-neo-sm">
+                    <p class="text-xs font-bold text-teal uppercase tracking-wider mb-1">Education</p>
+                    <p class="font-display font-bold">Double Master's Graduate</p>
+                </div>
+                <div class="bg-white border-2 border-navy p-4 shadow-neo-sm">
+                    <p class="text-xs font-bold text-teal uppercase tracking-wider mb-1">Languages</p>
+                    <p class="font-display font-bold">Arabic, Italian, English, French, Spanish</p>
+                </div>
+                <div class="bg-white border-2 border-navy p-4 shadow-neo-sm">
+                    <p class="text-xs font-bold text-teal uppercase tracking-wider mb-1">Toolkit</p>
+                    <p class="font-display font-bold">R, Power BI, Python, MS 365</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT -->
+    <section id="about" class="stack-section pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-sand border-2 border-navy inline-block"></span>
+                About Me
+            </h2>
+            <div class="grid md:grid-cols-12 gap-12">
+                <div class="md:col-span-7 space-y-6 text-lg leading-relaxed text-navy/90">
+                    <p>
+                        I am an International Relations and European Studies graduate with hands-on experience at <strong>UN Trade and Development (UNCTAD)</strong> in Geneva. My work sits at the intersection of policy, data, and human communication.
+                    </p>
+                    <p>
+                        I don't just analyze data; I communicate it. Whether I am translating complex UN Global Survey findings into visual reports, designing multilingual e-learning modules for WTO Trade Facilitation, or supporting digital transformation for national trade portals, my goal is always the same: <strong>making international development clear, accessible, and actionable.</strong>
+                    </p>
+                    <p>
+                        With a background spanning cultural mediation, academic research, and international capacity building, I bring a nuanced, cross-cultural perspective to every project. I am comfortable working across cultures, managing stakeholder communications, and leveraging tools like R, Power BI, and Python to create better storytelling and support decision-making.
+                    </p>
+                </div>
+                <div class="md:col-span-5 space-y-4">
+                    <div class="bg-white border-2 border-navy p-6 shadow-neo">
+                        <h3 class="font-display font-bold text-xl mb-4">Core Focus</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal mt-1">◆</span>
+                                <span>Communicating complex trade and policy issues to diverse audiences.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal mt-1">◆</span>
+                                <span>Designing and administering multilingual e-learning and capacity-building programs.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-teal mt-1">◆</span>
+                                <span>Using data visualization (R, Power BI) to support the narrative.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: SELECTED WORK -->
+    <section id="work" class="stack-section pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-6 flex items-center gap-3">
+                <span class="w-8 h-8 bg-teal border-2 border-navy inline-block"></span>
+                Selected Work
+            </h2>
+            
+            <div class="flex flex-wrap gap-3 mb-8" id="portfolio-filters">
+                <button class="filter-btn active px-4 py-2 border-2 border-navy font-medium text-sm transition-all hover:-translate-y-0.5" data-filter="all">All</button>
+                <button class="filter-btn px-4 py-2 border-2 border-navy bg-white font-medium text-sm transition-all hover:-translate-y-0.5" data-filter="communication">Communication & Content</button>
+                <button class="filter-btn px-4 py-2 border-2 border-navy bg-white font-medium text-sm transition-all hover:-translate-y-0.5" data-filter="learning">Learning Design</button>
+                <button class="filter-btn px-4 py-2 border-2 border-navy bg-white font-medium text-sm transition-all hover:-translate-y-0.5" data-filter="data">Data Visualization</button>
+                <button class="filter-btn px-4 py-2 border-2 border-navy bg-white font-medium text-sm transition-all hover:-translate-y-0.5" data-filter="research">Research & Policy</button>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+                <!-- Project A -->
+                <div class="project-card group bg-white border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-1 transition-all cursor-pointer p-6 flex flex-col" data-category="communication research" onclick="openModal('modal-a')">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold bg-sand/20 px-2 py-1 border border-navy">Research & Policy</span>
+                        <span class="text-navy/40 group-hover:text-teal transition-colors">↗</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">UN Study Design Contribution</h3>
+                    <p class="text-sm text-navy/70 mb-4 flex-grow">Editorial and visual contribution to a UN-related study. Generated realistic AI images, translated from Spanish to English, and proofread the content to make research findings clear and engaging.</p>
+                    <div class="text-xs font-medium text-teal border-t-2 border-lightgray pt-3 mt-auto">View Case Study →</div>
+                </div>
+                <!-- Project B -->
+                <div class="project-card group bg-white border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-1 transition-all cursor-pointer p-6 flex flex-col" data-category="learning" onclick="openModal('modal-b')">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold bg-teal/10 px-2 py-1 border border-navy">Learning Design</span>
+                        <span class="text-navy/40 group-hover:text-teal transition-colors">↗</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">WTO E-learning Course Content</h3>
+                    <p class="text-sm text-navy/70 mb-4 flex-grow">Contributed to development of a communication course for Southern African and Middle Eastern countries, including quizzes and exams for self-paced e-learning.</p>
+                    <div class="text-xs font-medium text-teal border-t-2 border-lightgray pt-3 mt-auto">View Case Study →</div>
+                </div>
+                <!-- Project C -->
+                <div class="project-card group bg-white border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-1 transition-all cursor-pointer p-6 flex flex-col" data-category="data" onclick="openModal('modal-c')">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold bg-navy text-white px-2 py-1 border border-navy">Data Visualization</span>
+                        <span class="text-navy/40 group-hover:text-teal transition-colors">↗</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Trade Facilitation Data Stories</h3>
+                    <p class="text-sm text-navy/70 mb-4 flex-grow">Translated complex trade facilitation datasets into clear visual insights using R and Power BI, tailored specifically for policy and communication audiences.</p>
+                    <div class="text-xs font-medium text-teal border-t-2 border-lightgray pt-3 mt-auto">View Case Study →</div>
+                </div>
+                <!-- Project D -->
+                <div class="project-card group bg-white border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-1 transition-all cursor-pointer p-6 flex flex-col" data-category="communication" onclick="openModal('modal-d')">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold bg-sand/20 px-2 py-1 border border-navy">Templates & Presentations</span>
+                        <span class="text-navy/40 group-hover:text-teal transition-colors">↗</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Digital Content & Carousel Templates</h3>
+                    <p class="text-sm text-navy/70 mb-4 flex-grow">Communication templates and carousel concepts designed to make technical UNCTAD topics more engaging and easier to understand on digital channels.</p>
+                    <div class="text-xs font-medium text-teal border-t-2 border-lightgray pt-3 mt-auto">View Case Study →</div>
+                </div>
+                <!-- Project E -->
+                <div class="project-card group bg-white border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-1 transition-all cursor-pointer p-6 flex flex-col" data-category="research data" onclick="openModal('modal-e')">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold bg-teal/10 px-2 py-1 border border-navy">Digital Transformation</span>
+                        <span class="text-navy/40 group-hover:text-teal transition-colors">↗</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Egypt Trade Information Portal</h3>
+                    <p class="text-sm text-navy/70 mb-4 flex-grow">Communication tool for trade information. Handled translation, data upload, and bug flagging. Designed clear communication of import/export steps, authorities, timelines, and costs.</p>
+                    <div class="text-xs font-medium text-teal border-t-2 border-lightgray pt-3 mt-auto">View Case Study →</div>
+                </div>
+                <!-- Project F -->
+                <div class="project-card group bg-white border-2 border-navy shadow-neo hover:shadow-neo-hover hover:-translate-y-1 transition-all cursor-pointer p-6 flex flex-col" data-category="learning" onclick="openModal('modal-f')">
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-xs font-bold bg-navy text-white px-2 py-1 border border-navy">Learning Design</span>
+                        <span class="text-navy/40 group-hover:text-teal transition-colors">↗</span>
+                    </div>
+                    <h3 class="font-display font-bold text-xl mb-2">Blockchain & WTO Learning Support</h3>
+                    <p class="text-sm text-navy/70 mb-4 flex-grow">Coordinated multilingual e-learning delivery on WTO agreements and blockchain, including learner support, essay grading, and platform management.</p>
+                    <div class="text-xs font-medium text-teal border-t-2 border-lightgray pt-3 mt-auto">View Case Study →</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: EXPERIENCE -->
+    <section id="experience" class="stack-section pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-navy text-white border-2 border-navy inline-block flex items-center justify-center text-sm">Ex</span>
+                Experience
+            </h2>
+            <div class="space-y-8 relative border-l-2 border-navy ml-3 md:ml-0 md:pl-0">
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-teal border-2 border-navy rounded-full"></div>
+                    <div class="bg-white border-2 border-navy p-6 shadow-neo-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                            <div>
+                                <h3 class="font-display font-bold text-xl">Communication Consultant</h3>
+                                <p class="text-teal font-medium">UN Trade and Development (UNCTAD) | Geneva, Switzerland</p>
+                            </div>
+                            <span class="text-sm font-medium bg-lightgray px-3 py-1 border border-navy mt-2 md:mt-0 w-fit">Nov – Dec 2025</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-navy/80 list-disc list-inside">
+                            <li>Developed communication modules (news writing, social media) for government officials in the Middle East and Southern Africa.</li>
+                            <li>Delivered WTO and Blockchain e-learning in English, Spanish, and Arabic to 500+ participants; managed platform communications.</li>
+                            <li>Analyzed implications of AI for WTO Trade Facilitation Agreement implementation, identifying good practices across member countries.</li>
+                            <li>Applied Python, Power BI, and Canva to data visualization and front-end platform updates for the Egypt Trade Information Portal.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-navy border-2 border-navy rounded-full"></div>
+                    <div class="bg-white border-2 border-navy p-6 shadow-neo-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                            <div>
+                                <h3 class="font-display font-bold text-xl">Economic Affairs Intern</h3>
+                                <p class="text-teal font-medium">UN Trade and Development (UNCTAD) | Geneva, Switzerland</p>
+                            </div>
+                            <span class="text-sm font-medium bg-lightgray px-3 py-1 border border-navy mt-2 md:mt-0 w-fit">May – Nov 2025</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-navy/80 list-disc list-inside">
+                            <li>Translated complex UN Global Survey data into accessible visual reports and comparative analysis using R and Excel.</li>
+                            <li>Supported a six-month Jamaica WTO TFA programme, managing communication for 50+ participants and preparing all learning materials.</li>
+                            <li>Delivered e-learning in English and Spanish on WTO TFA and M&E to 200+ participants.</li>
+                            <li>Drafted news, blogs, and newsletters; designed visuals in Canva and represented the team at UNCTAD 16 and WTO Public Forum.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-sand border-2 border-navy rounded-full"></div>
+                    <div class="bg-white border-2 border-navy p-6 shadow-neo-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
+                            <div>
+                                <h3 class="font-display font-bold text-xl">Arabic Interpreter & Cultural Mediator</h3>
+                                <p class="text-teal font-medium">Public Prosecutor's Office | Rimini, Italy</p>
+                            </div>
+                            <span class="text-sm font-medium bg-lightgray px-3 py-1 border border-navy mt-2 md:mt-0 w-fit">Jun 2020 – Apr 2022</span>
+                        </div>
+                        <p class="text-sm text-navy/80">Provided Arabic–Italian interpretation in legal proceedings and translated documents (FR/EN), ensuring accurate cultural mediation in high-stakes environments.</p>
+                    </div>
+                </div>
+                <div class="relative pl-8 md:pl-12">
+                    <div class="absolute -left-[9px] top-1 w-4 h-4 bg-lightgray border-2 border-navy rounded-full"></div>
+                    <div class="border-2 border-dashed border-navy/30 p-4 rounded bg-offwhite/50">
+                        <p class="text-sm font-medium text-navy/60">Previous International Experience: Summer Camp Counselor (Wisconsin, USA, 2019) | Au Pair (Chicago, USA, 2018–2019) | Hospitality Receptionist (Rimini, Italy, 2022). <em>These roles built my foundational cross-cultural communication and adaptability skills.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: SKILLS & EDUCATION -->
+    <section id="skills" class="stack-section pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-8 flex items-center gap-3">
+                <span class="w-8 h-8 bg-sand border-2 border-navy inline-block"></span>
+                Skills & Education
+            </h2>
+            <div class="grid md:grid-cols-12 gap-8">
+                <div class="md:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white border-2 border-navy p-5 shadow-neo-sm">
+                        <h3 class="font-display font-bold text-lg mb-3 text-teal">Communication</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Content Writing</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Presentation Design</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Digital Content</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Translation</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Stakeholder Comms</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border-2 border-navy p-5 shadow-neo-sm">
+                        <h3 class="font-display font-bold text-lg mb-3 text-teal">Learning & Project Support</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Capacity Building</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">E-learning Admin</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Course Design</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">MS Forms / SharePoint</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border-2 border-navy p-5 shadow-neo-sm">
+                        <h3 class="font-display font-bold text-lg mb-3 text-teal">Data & Design Tools</h3>
+                        <p class="text-xs text-navy/60 mb-2">For analysis, visualization, and design automation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">R Studio</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Power BI</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Python (Design Automation)</span>
+                            <span class="bg-lightgray px-2 py-1 text-xs font-medium border border-navy">Excel / SQL</span>
+                        </div>
+                    </div>
+                    <div class="bg-white border-2 border-navy p-5 shadow-neo-sm">
+                        <h3 class="font-display font-bold text-lg mb-3 text-teal">Python for Design</h3>
+                        <p class="text-xs text-navy/70">I use Python to automate design tasks: batch resizing images, merging files, modifying backgrounds, and combining PDFs. This saves time and keeps visual materials consistent.</p>
+                    </div>
+                    <div class="bg-white border-2 border-navy p-5 shadow-neo-sm md:col-span-2">
+                        <h3 class="font-display font-bold text-lg mb-3 text-teal">Languages</h3>
+                        <ul class="text-sm space-y-1">
+                            <li class="flex justify-between"><span>Arabic</span> <span class="font-bold">Native</span></li>
+                            <li class="flex justify-between"><span>Italian</span> <span class="font-bold">Native</span></li>
+                            <li class="flex justify-between"><span>English</span> <span class="font-bold">C1</span></li>
+                            <li class="flex justify-between"><span>French</span> <span class="font-bold">C1</span></li>
+                            <li class="flex justify-between"><span>Spanish</span> <span class="font-bold">B2</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="md:col-span-5 space-y-4">
+                    <div class="bg-navy text-offwhite border-2 border-navy p-6 shadow-neo">
+                        <h3 class="font-display font-bold text-xl mb-4 text-sand">Education</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <p class="font-bold text-lg">Double Master's Degree</p>
+                                <p class="text-sm text-offwhite/80">International Relations & European Studies</p>
+                                <p class="text-xs text-offwhite/60 mt-1">LUISS Guido Carli (110/110) & University of Salzburg | 2025</p>
+                                <p class="text-xs text-offwhite/70 mt-2 italic">Thesis: Comparative analysis of populist communication strategies using qualitative/quantitative R research.</p>
+                            </div>
+                            <div class="border-t border-offwhite/20 pt-4">
+                                <p class="font-bold text-lg">Bachelor's Degree</p>
+                                <p class="text-sm text-offwhite/80">Economics of Tourism</p>
+                                <p class="text-xs text-offwhite/60 mt-1">University of Bologna (Erasmus+ at Univ. of Barcelona) | 2022</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="[LINK_TO_CERTIFICATIONS_FOLDER]" target="_blank" class="block w-full md:w-auto text-center bg-teal text-white border-2 border-navy py-4 font-bold shadow-neo hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">
+                        View Full Certifications Folder ↗
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT -->
+    <section id="contact" class="stack-section pt-24 pb-16 md:pt-32 md:pb-24 bg-navy text-offwhite border-t-2 border-navy">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="font-display text-4xl font-bold mb-6 text-white">Let's Connect</h2>
+            <p class="text-xl text-offwhite/80 max-w-2xl mb-8">
+                I'm currently open to internships and entry-level opportunities in communications, research, data storytelling, and international development.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="space-y-4">
+                    <a href="mailto:[YOUR_EMAIL]" class="flex items-center gap-4 bg-offwhite/10 border-2 border-offwhite/30 p-4 hover:bg-offwhite/20 transition-colors">
+                        <span class="text-2xl">✉</span>
+                        <div>
+                            <p class="text-xs text-sand font-bold uppercase">Email</p>
+                            <p class="font-medium">[your.email@example.com]</p>
+                        </div>
+                    </a>
+                    <a href="[LINKEDIN_URL]" target="_blank" class="flex items-center gap-4 bg-offwhite/10 border-2 border-offwhite/30 p-4 hover:bg-offwhite/20 transition-colors">
+                        <span class="text-2xl">in</span>
+                        <div>
+                            <p class="text-xs text-sand font-bold uppercase">LinkedIn</p>
+                            <p class="font-medium">linkedin.com/in/akramhamou</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <a href="[LINK_TO_CV_PDF]" target="_blank" class="w-full md:w-auto bg-sand text-navy border-2 border-white px-8 py-4 font-bold text-lg shadow-[4px_4px_0px_0px_#ffffff] hover:shadow-[6px_6px_0px_0px_#ffffff] hover:-translate-y-0.5 transition-all text-center">
+                        Download Full CV
+                    </a>
+                </div>
+            </div>
+            <footer class="border-t border-offwhite/20 pt-8 mt-auto">
+                <p class="text-xs text-offwhite/50 max-w-3xl">
+                    <strong>Disclaimer:</strong> Selected materials are shared for portfolio purposes only. Any confidential, sensitive, or non-public UNCTAD information has been removed or anonymized in compliance with organizational guidelines. 
+                </p>
+                <p class="text-xs text-offwhite/30 mt-2">© 2026 Akram Hamou. Built with clarity and purpose.</p>
+            </footer>
+        </div>
+    </section>
+
+    <!-- MODALS FOR PROJECTS -->
+
+    <!-- Modal A -->
+    <div id="modal-a" class="modal-backdrop fixed inset-0 z-[100] hidden bg-navy/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content bg-offwhite border-2 border-navy shadow-neo max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal('modal-a')" class="absolute top-4 right-4 w-8 h-8 bg-navy text-white font-bold flex items-center justify-center hover:bg-teal transition-colors z-10">×</button>
+            <div class="p-8">
+                <span class="text-xs font-bold bg-sand/20 px-2 py-1 border border-navy mb-4 inline-block">Research & Policy / Communication</span>
+                <h3 class="font-display text-3xl font-bold mb-4">UN Study Design Contribution</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="md:col-span-2 space-y-4 text-sm text-navy/80">
+                        <p><strong class="text-navy">Objective:</strong> Make complex UN research findings clear, readable, and engaging for a wider, non-technical policy audience.</p>
+                        <p><strong class="text-navy">My Role:</strong> Generated realistic AI images for visual support, translated content from Spanish to English, and proofread the final text. Handled editorial structuring and visual layout planning.</p>
+                        <p><strong class="text-navy">Outcome:</strong> Improved readability and engagement metrics for the published study.</p>
+                    </div>
+                    <div class="bg-lightgray border-2 border-navy flex items-center justify-center min-h-[200px] overflow-hidden">
+                        <img src="https://placehold.co/400x300/F1F5F9/0F172A?text=Project+A+Image" alt="Project A Preview" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="flex gap-3 flex-wrap mb-6">
+                    <span class="text-xs font-medium bg-white border border-navy px-2 py-1">Tools: AI Image Generation, Translation, Proofreading, Canva, MS Word</span>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-6 border-t-2 border-lightgray">
+                    <a href="[LINK_TO_PROJECT]" target="_blank" class="inline-flex items-center gap-2 bg-navy text-offwhite px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">View Live Project ↗</a>
+                    <a href="[LINK_TO_PDF]" target="_blank" class="inline-flex items-center gap-2 bg-offwhite text-navy px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">Download PDF ↓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal B -->
+    <div id="modal-b" class="modal-backdrop fixed inset-0 z-[100] hidden bg-navy/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content bg-offwhite border-2 border-navy shadow-neo max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal('modal-b')" class="absolute top-4 right-4 w-8 h-8 bg-navy text-white font-bold flex items-center justify-center hover:bg-teal transition-colors z-10">×</button>
+            <div class="p-8">
+                <span class="text-xs font-bold bg-teal/10 px-2 py-1 border border-navy mb-4 inline-block">Learning Design & Capacity Building</span>
+                <h3 class="font-display text-3xl font-bold mb-4">WTO E-learning Course Content</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="md:col-span-2 space-y-4 text-sm text-navy/80">
+                        <p><strong class="text-navy">Objective:</strong> Develop accessible learning materials for government officials on trade and development topics.</p>
+                        <p><strong class="text-navy">My Role:</strong> Contributed to development of a communication course for Southern African and Middle Eastern countries. Created quizzes, exams, and practical activities for self-paced e-learning delivery.</p>
+                        <p><strong class="text-navy">Outcome:</strong> Successful delivery of multilingual (EN, ES, AR) e-learning with high completion rates.</p>
+                    </div>
+                    <div class="bg-lightgray border-2 border-navy flex items-center justify-center min-h-[200px] overflow-hidden">
+                        <img src="https://placehold.co/400x300/F1F5F9/0F172A?text=Project+B+Image" alt="Project B Preview" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="flex gap-3 flex-wrap mb-6">
+                    <span class="text-xs font-medium bg-white border border-navy px-2 py-1">Tools: MS Forms, SharePoint, E-learning Platforms</span>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-6 border-t-2 border-lightgray">
+                    <a href="[LINK_TO_PROJECT]" target="_blank" class="inline-flex items-center gap-2 bg-navy text-offwhite px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">View Live Project ↗</a>
+                    <a href="[LINK_TO_PDF]" target="_blank" class="inline-flex items-center gap-2 bg-offwhite text-navy px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">Download PDF ↓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal C -->
+    <div id="modal-c" class="modal-backdrop fixed inset-0 z-[100] hidden bg-navy/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content bg-offwhite border-2 border-navy shadow-neo max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal('modal-c')" class="absolute top-4 right-4 w-8 h-8 bg-navy text-white font-bold flex items-center justify-center hover:bg-teal transition-colors z-10">×</button>
+            <div class="p-8">
+                <span class="text-xs font-bold bg-navy text-white px-2 py-1 border border-navy mb-4 inline-block">Data Visualization</span>
+                <h3 class="font-display text-3xl font-bold mb-4">Trade Facilitation Data Stories</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="md:col-span-2 space-y-4 text-sm text-navy/80">
+                        <p><strong class="text-navy">Objective:</strong> Translate complex trade facilitation datasets into clear visual insights for policy and communication audiences.</p>
+                        <p><strong class="text-navy">My Role:</strong> Data cleaning, analysis, and visual design. Ensuring the data serves the narrative.</p>
+                        <p><strong class="text-navy">Outcome:</strong> Actionable visual reports that supported internal decision-making and external outreach.</p>
+                    </div>
+                    <div class="bg-lightgray border-2 border-navy flex items-center justify-center min-h-[200px] overflow-hidden">
+                        <img src="https://placehold.co/400x300/F1F5F9/0F172A?text=Project+C+Image" alt="Project C Preview" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="flex gap-3 flex-wrap mb-6">
+                    <span class="text-xs font-medium bg-white border border-navy px-2 py-1">Tools: R Studio, Excel, Power BI</span>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-6 border-t-2 border-lightgray">
+                    <a href="[LINK_TO_PROJECT]" target="_blank" class="inline-flex items-center gap-2 bg-navy text-offwhite px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">View Live Project ↗</a>
+                    <a href="[LINK_TO_PDF]" target="_blank" class="inline-flex items-center gap-2 bg-offwhite text-navy px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">Download PDF ↓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal D -->
+    <div id="modal-d" class="modal-backdrop fixed inset-0 z-[100] hidden bg-navy/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content bg-offwhite border-2 border-navy shadow-neo max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal('modal-d')" class="absolute top-4 right-4 w-8 h-8 bg-navy text-white font-bold flex items-center justify-center hover:bg-teal transition-colors z-10">×</button>
+            <div class="p-8">
+                <span class="text-xs font-bold bg-sand/20 px-2 py-1 border border-navy mb-4 inline-block">Templates & Presentations</span>
+                <h3 class="font-display text-3xl font-bold mb-4">Digital Content & Carousel Templates</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="md:col-span-2 space-y-4 text-sm text-navy/80">
+                        <p><strong class="text-navy">Objective:</strong> Make technical UNCTAD topics more engaging and easier to understand on digital channels.</p>
+                        <p><strong class="text-navy">My Role:</strong> Designed reusable communication templates and carousel concepts aligning with UN visual identity.</p>
+                        <p><strong class="text-navy">Outcome:</strong> Streamlined content creation process for the communications team.</p>
+                    </div>
+                    <div class="bg-lightgray border-2 border-navy flex items-center justify-center min-h-[200px] overflow-hidden">
+                        <img src="https://placehold.co/400x300/F1F5F9/0F172A?text=Project+D+Image" alt="Project D Preview" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="flex gap-3 flex-wrap mb-6">
+                    <span class="text-xs font-medium bg-white border border-navy px-2 py-1">Tools: Canva, Adobe Express</span>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-6 border-t-2 border-lightgray">
+                    <a href="[LINK_TO_PROJECT]" target="_blank" class="inline-flex items-center gap-2 bg-navy text-offwhite px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">View Live Project ↗</a>
+                    <a href="[LINK_TO_PDF]" target="_blank" class="inline-flex items-center gap-2 bg-offwhite text-navy px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">Download PDF ↓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal E -->
+    <div id="modal-e" class="modal-backdrop fixed inset-0 z-[100] hidden bg-navy/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content bg-offwhite border-2 border-navy shadow-neo max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal('modal-e')" class="absolute top-4 right-4 w-8 h-8 bg-navy text-white font-bold flex items-center justify-center hover:bg-teal transition-colors z-10">×</button>
+            <div class="p-8">
+                <span class="text-xs font-bold bg-teal/10 px-2 py-1 border border-navy mb-4 inline-block">Research & Policy / Digital Transformation</span>
+                <h3 class="font-display text-3xl font-bold mb-4">Egypt Trade Information Portal</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="md:col-span-2 space-y-4 text-sm text-navy/80">
+                        <p><strong class="text-navy">Objective:</strong> Improve trade information content accessibility and accuracy through clear communication design.</p>
+                        <p><strong class="text-navy">My Role:</strong> Translation, data uploads, quality checks, and bug flagging. Designed clear communication of import/export steps, authorities, timelines, and costs for end users.</p>
+                        <p><strong class="text-navy">Outcome:</strong> Enhanced clarity and usability of the portal as a communication tool for traders and government officials.</p>
+                    </div>
+                    <div class="bg-lightgray border-2 border-navy flex items-center justify-center min-h-[200px] overflow-hidden">
+                        <img src="https://placehold.co/400x300/F1F5F9/0F172A?text=Project+E+Image" alt="Project E Preview" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="flex gap-3 flex-wrap mb-6">
+                    <span class="text-xs font-medium bg-white border border-navy px-2 py-1">Tools: CMS Platforms, Excel, Translation Tools, Design Software</span>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-6 border-t-2 border-lightgray">
+                    <a href="[LINK_TO_PROJECT]" target="_blank" class="inline-flex items-center gap-2 bg-navy text-offwhite px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">View Live Project ↗</a>
+                    <a href="[LINK_TO_PDF]" target="_blank" class="inline-flex items-center gap-2 bg-offwhite text-navy px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">Download PDF ↓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal F -->
+    <div id="modal-f" class="modal-backdrop fixed inset-0 z-[100] hidden bg-navy/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content bg-offwhite border-2 border-navy shadow-neo max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+            <button onclick="closeModal('modal-f')" class="absolute top-4 right-4 w-8 h-8 bg-navy text-white font-bold flex items-center justify-center hover:bg-teal transition-colors z-10">×</button>
+            <div class="p-8">
+                <span class="text-xs font-bold bg-navy text-white px-2 py-1 border border-navy mb-4 inline-block">Learning Design & Capacity Building</span>
+                <h3 class="font-display text-3xl font-bold mb-4">Blockchain & WTO Learning Support</h3>
+                <div class="grid md:grid-cols-3 gap-6 mb-6">
+                    <div class="md:col-span-2 space-y-4 text-sm text-navy/80">
+                        <p><strong class="text-navy">Objective:</strong> Ensure smooth multilingual e-learning delivery on complex topics.</p>
+                        <p><strong class="text-navy">My Role:</strong> Coordinated e-learning delivery, including learner support, essay grading, platform management, and course coordination.</p>
+                        <p><strong class="text-navy">Outcome:</strong> High participant satisfaction and smooth course administration across multiple languages.</p>
+                    </div>
+                    <div class="bg-lightgray border-2 border-navy flex items-center justify-center min-h-[200px] overflow-hidden">
+                        <img src="https://placehold.co/400x300/F1F5F9/0F172A?text=Project+F+Image" alt="Project F Preview" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="flex gap-3 flex-wrap mb-6">
+                    <span class="text-xs font-medium bg-white border border-navy px-2 py-1">Tools: E-learning LMS, MS Office, Multilingual Support</span>
+                </div>
+                <div class="flex flex-wrap gap-3 pt-6 border-t-2 border-lightgray">
+                    <a href="[LINK_TO_PROJECT]" target="_blank" class="inline-flex items-center gap-2 bg-navy text-offwhite px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">View Live Project ↗</a>
+                    <a href="[LINK_TO_PDF]" target="_blank" class="inline-flex items-center gap-2 bg-offwhite text-navy px-4 py-2 text-sm font-medium border-2 border-navy shadow-neo-sm hover:shadow-neo-hover hover:-translate-y-0.5 transition-all">Download PDF ↓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const filter = btn.getAttribute('data-filter');
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.add('active'); }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-backdrop')) {
+                closeModal(event.target.id);
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                document.querySelectorAll('.modal-backdrop').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stack-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
